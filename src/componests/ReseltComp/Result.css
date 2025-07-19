@@ -1,0 +1,52 @@
+.result-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.result-page h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.result-loading,
+.result-error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.result-output {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* Markdown Styling */
+.result-output table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.result-output th,
+.result-output td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.result-output th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.result-output a {
+  color: #007bff;
+  text-decoration: underline;
+}

@@ -1,0 +1,82 @@
+.admin-home-container {
+  padding: 40px 20px;
+  text-align: center;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  width: 280px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  color: #333;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #0077b6;
+}
+
+.dashboard-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-home-container h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-home-container {
+    padding: 20px 10px;
+  }
+
+  .admin-home-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-card p {
+    font-size: 0.9rem;
+  }
+}

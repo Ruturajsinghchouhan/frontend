@@ -1,0 +1,65 @@
+.travel-box {
+  min-height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+   background: linear-gradient(135deg, #91c8af, #233439);
+}
+
+.assistant-form-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.assistant-title {
+  font-size: 36px;
+  color: #00703e;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.assistant-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.assistant-input-group {
+  margin-bottom: 20px;
+}
+
+.assistant-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.assistant-input:focus {
+  outline: none;
+  border-color: #044d29;
+}
+
+.assistant-submit-btn {
+  background-color: #00ffd9;
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.assistant-submit-btn:hover {
+  background-color: #b32d00;
+}

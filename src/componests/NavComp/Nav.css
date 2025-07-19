@@ -1,0 +1,80 @@
+/* Base styles */
+.navbar {
+  
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+   background: #020024;
+background: linear-gradient(90deg, #555 0%, #00b894 35%, rgb(0 72 86) 100%);
+}
+
+
+.nav-logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-items li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-name {
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+.nav-btn {
+  padding: 5px 10px;
+  background-color: #00bcd4;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #1e1e1e;
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .nav-items.active {
+    display: flex;
+  }
+
+  .nav-items li {
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
