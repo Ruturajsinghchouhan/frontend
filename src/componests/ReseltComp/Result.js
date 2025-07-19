@@ -15,7 +15,7 @@ function Result() {
 
   useEffect(() => {
     axios
-      .post('http://localhost:3001/search/get-data', { from, to, date })
+      .post('https://backend-wf81.onrender.com/search/get-data', { from, to, date })
       .then((res) => {
         setTextData(res.data.text);
         setLoading(false);
