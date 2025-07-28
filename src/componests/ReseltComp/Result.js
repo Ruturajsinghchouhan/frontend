@@ -7,24 +7,40 @@ import './Result.css';
 
 function Result() {
   const { state } = useLocation();
-  const { from, to, date } = state;
+  const { from, to, date } = state || {};
 
   const [loading, setLoading] = useState(true);
   const [textData, setTextData] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
+    if (!from || !to || !date) {
+      setError('Missing travel input. Please search again.');
+      setLoading(false);
+      return;
+    }
+
     axios
-      .post('https://backend-wf81.onrender.com/search/get-data', { from, to, date })
+      .post(`${process.env.REACT_APP_BACKEND_URL}/search/get-data`, { from, to, date })
       .then((res) => {
         setTextData(res.data.text);
         setLoading(false);
       })
-      .catch(() => {
-        setError('Something went wrong while fetching data.');
+      .catch((err) => {
+        const msg =
+          err.response?.data?.error || 'Something went wrong while fetching data.';
+        setError(msg);
         setLoading(false);
       });
   }, [from, to, date]);
+
+  if (!state) {
+    return (
+      <div className="result-page">
+        <p className="result-error">No travel data provided. Please go back and search again.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="result-page">
@@ -32,7 +48,7 @@ function Result() {
         Best Travel Options from <b>{from}</b> to <b>{to}</b> on {date}
       </h2>
 
-      {loading && <p className="result-loading">Loading...</p>}
+      {loading && <p className="result-loading">Loading travel options...</p>}
       {error && <p className="result-error">{error}</p>}
 
       {!loading && !error && (

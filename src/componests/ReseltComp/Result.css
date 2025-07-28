@@ -1,29 +1,47 @@
 .result-page {
-  padding: 20px;
-  max-width: 900px;
+  padding: 40px 20px;
+  max-width: 960px;
   margin: auto;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #2c2c2c;
+  background-color: #f5f7fa;
+  min-height: 100vh;
 }
 
 .result-page h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 6px;
+  animation: fadeInDown 0.4s ease-in-out;
 }
 
 .result-loading,
 .result-error {
   text-align: center;
   font-size: 18px;
-  margin-top: 40px;
+  color: #555;
+  margin-top: 60px;
+  font-weight: 500;
+}
+
+.result-error {
+  color: #d9534f;
 }
 
 .result-output {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-  line-height: 1.6;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  line-height: 1.75;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
   overflow-x: auto;
 }
 
@@ -31,22 +49,72 @@
 .result-output table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .result-output th,
 .result-output td {
-  border: 1px solid #ccc;
-  padding: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 14px;
   text-align: center;
+  font-size: 15px;
 }
 
 .result-output th {
-  background-color: #f8f8f8;
-  font-weight: bold;
+  background-color: #f0f4f8;
+  font-weight: 600;
+  color: #333;
+}
+
+.result-output td {
+  background-color: #fafafa;
 }
 
 .result-output a {
   color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.result-output a:hover {
+  color: #0056b3;
   text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive Table Scroll */
+.result-output::-webkit-scrollbar {
+  height: 8px;
+}
+
+.result-output::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
 }

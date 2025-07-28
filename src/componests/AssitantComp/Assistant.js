@@ -76,6 +76,7 @@ function TravelForm() {
     </datalist>
   </div>
 </div>
+<div className="floating-icons">✈️</div>
 
  </>
     
