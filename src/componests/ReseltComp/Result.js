@@ -21,7 +21,7 @@ function Result() {
     }
 
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/search/get-data`, { from, to, date })
+      .post(`https://backend-wf81.onrender.com/search/get-data`, { from, to, date })
       .then((res) => {
         setTextData(res.data.text);
         setLoading(false);
