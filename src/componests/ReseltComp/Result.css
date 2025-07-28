@@ -1,120 +1,96 @@
+/* Result.css */
+
 .result-page {
   padding: 40px 20px;
-  max-width: 960px;
+  max-width: 1000px;
   margin: auto;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  color: #2c2c2c;
-  background-color: #f5f7fa;
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c3e50;
+  background: #fefefe;
 }
 
 .result-page h2 {
-  margin-bottom: 30px;
   text-align: center;
+  margin-bottom: 30px;
   font-size: 28px;
-  font-weight: 600;
-  color: #222;
-  border-bottom: 2px solid #007bff;
-  display: inline-block;
-  padding-bottom: 6px;
-  animation: fadeInDown 0.4s ease-in-out;
+  color: #1e90ff;
+  font-weight: bold;
 }
 
 .result-loading,
 .result-error {
   text-align: center;
   font-size: 18px;
-  color: #555;
-  margin-top: 60px;
-  font-weight: 500;
-}
-
-.result-error {
-  color: #d9534f;
+  margin: 20px 0;
+  color: #e74c3c;
 }
 
 .result-output {
   background: #ffffff;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  line-height: 1.75;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  animation: fadeIn 0.5s ease-in-out;
-  overflow-x: auto;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
 }
 
 /* Markdown Styling */
-.result-output table {
+.markdown-body h3 {
+  color: #16a085;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.markdown-body table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 24px;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  margin: 20px 0;
 }
 
-.result-output th,
-.result-output td {
-  border: 1px solid #e0e0e0;
-  padding: 14px;
-  text-align: center;
-  font-size: 15px;
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  text-align: left;
 }
 
-.result-output th {
-  background-color: #f0f4f8;
-  font-weight: 600;
-  color: #333;
+.markdown-body th {
+  background-color: #3498db;
+  color: #fff;
 }
 
-.result-output td {
-  background-color: #fafafa;
+.markdown-body td {
+  background-color: #f9f9f9;
 }
 
-.result-output a {
-  color: #007bff;
+.markdown-body ul {
+  margin-left: 20px;
+  list-style: square;
+}
+
+.markdown-body a {
+  color: #1e90ff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
 }
 
-.result-output a:hover {
-  color: #0056b3;
+.markdown-body a:hover {
   text-decoration: underline;
 }
-
-/* Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+.download-container {
+  text-align: right;
+  margin-bottom: 15px;
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+.download-btn {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-/* Responsive Table Scroll */
-.result-output::-webkit-scrollbar {
-  height: 8px;
-}
-
-.result-output::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+.download-btn:hover {
+  background-color: #0c76d6;
 }

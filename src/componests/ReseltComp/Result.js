@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import html2pdf from 'html2pdf.js';
 import './Result.css';
 
 function Result() {
@@ -34,6 +35,18 @@ function Result() {
       });
   }, [from, to, date]);
 
+  const handleDownloadPDF = () => {
+    const element = document.getElementById('pdf-content');
+    const opt = {
+      margin: 0.5,
+      filename: `Travel_Options_${from}_to_${to}_${date}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+    html2pdf().set(opt).from(element).save();
+  };
+
   if (!state) {
     return (
       <div className="result-page">
@@ -52,25 +65,33 @@ function Result() {
       {error && <p className="result-error">{error}</p>}
 
       {!loading && !error && (
-        <div className="result-output markdown-body">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              a: ({ node, ...props }) => (
-                <a
-                  {...props}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#007bff' }}
-                >
-                  {props.children}
-                </a>
-              ),
-            }}
-          >
-            {textData}
-          </ReactMarkdown>
-        </div>
+        <>
+          <div className="download-container">
+            <button className="download-btn" onClick={handleDownloadPDF}>
+              📄 Download as PDF
+            </button>
+          </div>
+
+          <div className="result-output markdown-body" id="pdf-content">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                a: ({ node, ...props }) => (
+                  <a
+                    {...props}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#007bff' }}
+                  >
+                    {props.children}
+                  </a>
+                ),
+              }}
+            >
+              {textData}
+            </ReactMarkdown>
+          </div>
+        </>
       )}
     </div>
   );
