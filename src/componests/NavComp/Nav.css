@@ -7,8 +7,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-   background: #020024;
-background: linear-gradient(90deg, #555 0%, #4198b8 35%, rgb(2, 106, 126) 100%);
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
 }
 
 
