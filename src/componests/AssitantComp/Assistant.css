@@ -1,10 +1,9 @@
 .travel-box {
   min-height: 100vh;
   display: flex;
-  margin-top: 80px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #b8e1fc, #c3e3fc);
+  background: linear-gradient(to bottom right, #2e97dc, #c3f7fc);
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
