@@ -34,7 +34,7 @@ function Navbar() {
               </>
             ) : (
               <>
-                <li><Link to="/profile">My Profile</Link></li>
+                {/* <li><Link to="/profile">My Profile</Link></li> */}
                 <li><Link to="/user">Home</Link></li>
               </>
             )}

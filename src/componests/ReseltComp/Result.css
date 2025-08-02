@@ -31,6 +31,7 @@
   padding: 30px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
+  overflow-x: auto;
 }
 
 /* Markdown Styling */
@@ -44,6 +45,8 @@
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  overflow-x: auto;
+  display: block;
 }
 
 .markdown-body th,
@@ -51,6 +54,7 @@
   border: 1px solid #ddd;
   padding: 10px 14px;
   text-align: left;
+  min-width: 120px; /* ensures readability on smaller screens */
 }
 
 .markdown-body th {
@@ -75,6 +79,7 @@
 .markdown-body a:hover {
   text-decoration: underline;
 }
+
 .download-container {
   text-align: right;
   margin-bottom: 15px;
@@ -93,4 +98,50 @@
 
 .download-btn:hover {
   background-color: #0c76d6;
+}
+
+/* 🔁 Responsive Enhancements */
+@media (max-width: 768px) {
+  .result-page {
+    padding: 20px 10px;
+  }
+
+  .result-page h2 {
+    font-size: 22px;
+  }
+
+  .result-output {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 18px;
+  }
+
+  .download-container {
+    text-align: center;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .markdown-body th,
+  .markdown-body td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .result-page h2 {
+    font-size: 20px;
+  }
+
+  .result-loading,
+  .result-error {
+    font-size: 16px;
+  }
 }
