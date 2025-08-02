@@ -1,9 +1,10 @@
 .travel-box {
   min-height: 100vh;
   display: flex;
+  margin-top: 80px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #b8e1fc, #e0c3fc);
+  background: linear-gradient(to bottom right, #b8e1fc, #c3e3fc);
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
@@ -63,7 +64,7 @@
 .assistant-input:focus {
   border-color: #00a8ff;
   outline: none;
-  box-shadow: 0 0 6px rgba(0, 168, 255, 0.3);
+  box-shadow: 0 0 6px rgba(5, 145, 215, 0.627);
 }
 
 .assistant-submit-btn {
