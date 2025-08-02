@@ -24,25 +24,30 @@ function User() {
 
   return (
     <div className="user-container">
-      <div className="profile-card shadow">
+      <div className="profile-card">
         <div className="profile-header">
-          <h2>👤 Welcome, {user.name}</h2>
-          <p>Your travel dashboard</p>
+          <h2>👋 Welcome, <span className="username">{user.name}</span></h2>
+          <p>Your personalized travel dashboard</p>
         </div>
 
         <div className="profile-info">
-          <p><strong>Email:</strong> {user.email}</p>
+          <div className="info-item">
+            <label>Email:</label>
+            <span>{user.email}</span>
+          </div>
         </div>
 
         <div className="profile-actions">
-          <button onClick={handleSearch} className="btn btn-primary">🔍 Search Travel Options</button>
+          <button onClick={handleSearch} className="btn-search">
+            🔍 Search Travel Options
+          </button>
         </div>
 
-        <hr />
+        <hr className="divider" />
 
         <div className="recent-section">
-          <h5>🧳 Recent Trips</h5>
-          <p style={{ color: "#888" }}>You haven’t searched yet. Start exploring!</p>
+          <h4>🧳 Recent Trips</h4>
+          <p className="empty-msg">You haven’t searched yet. Start exploring!</p>
         </div>
       </div>
     </div>
