@@ -13,3 +13,6 @@ body, html {
 .page-content {
   flex: 1;
 }
+body{
+  background: linear-gradient(to bottom right, #2e97dc, #c3f7fc);
+}
