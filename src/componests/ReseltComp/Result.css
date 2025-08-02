@@ -1,5 +1,7 @@
 /* Result.css */
-
+body{
+  background: linear-gradient(to bottom right, #275297, #49dcff);
+}
 .result-page {
   padding: 40px 20px;
   max-width: 1000px;
