@@ -8,7 +8,7 @@
   align-items: center;
   position: relative;
    background: #020024;
-background: linear-gradient(90deg, #555 0%, #00b894 35%, rgb(0 72 86) 100%);
+background: linear-gradient(90deg, #555 0%, #4198b8 35%, rgb(2, 106, 126) 100%);
 }
 
 
@@ -62,7 +62,7 @@ background: linear-gradient(90deg, #555 0%, #00b894 35%, rgb(0 72 86) 100%);
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: #1e1e1e;
+    background-color: #f7f2f2;
     width: 100%;
     display: none;
     padding: 10px 0;

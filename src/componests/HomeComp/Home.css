@@ -6,7 +6,7 @@
 }
 
 .home-hero {
-  background: linear-gradient(135deg, #91c8af, #233439);
+  background: linear-gradient(to bottom right, #b8e1fc, #e0c3fc);
   color: white;
   padding: 60px 30px;
   text-align: center;
