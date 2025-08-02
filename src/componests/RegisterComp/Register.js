@@ -8,26 +8,36 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState(false); // ✅ new state to track success
 
   const HandleSubmit = () => {
     const userDetail = { name, email, password };
-    console.log(userDetail);
 
+    // Basic validations
     if (!name) return setOutput("Name is required");
     if (!email) return setOutput("Email is required");
     if (!password) return setOutput("Password is required");
     if (password.length <= 4 || password.length > 10)
-      return setOutput("Password length must be between 5–10 characters");
+      return setOutput("Password must be 5–10 characters");
 
     axios.post("https://backend-wf81.onrender.com/user/save", userDetail)
       .then((response) => {
-        setOutput("User registered successfully ✅");
+        setOutput("✅ User registered successfully!");
+        setSuccess(true); // ✅ trigger success state
+
         setName('');
         setEmail('');
         setPassword('');
+
+        // Hide message after 3 seconds
+        setTimeout(() => {
+          setOutput(null);
+          setSuccess(false);
+        }, 3000);
       })
       .catch((error) => {
-        setOutput("User registration failed ❌");
+        setOutput("❌ Registration failed. Try again.");
+        setSuccess(false);
       });
   };
 
@@ -35,7 +45,11 @@ function Register() {
     <div className="form-wrapper">
       <div className="form-box">
         <h2>Register</h2>
-        {output && <p className="form-output">{output}</p>}
+        {output && (
+          <p className={`form-output ${success ? 'success' : 'error'}`}>
+            {output}
+          </p>
+        )}
         <form>
           <input
             type="text"

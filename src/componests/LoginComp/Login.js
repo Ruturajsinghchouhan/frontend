@@ -9,26 +9,35 @@ function Login() {
   const [output, setOutput] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); // ✅ loading state
 
   const HandleSubmit = () => {
+    setLoading(true); // Start loading
     const userDetail = { email, password };
-    axios.post(userApi + 'login', userDetail).then((response) => {
-      const userDetail = response.data.userList;
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('_id', userDetail._id);
-      localStorage.setItem('name', userDetail.name);
-      localStorage.setItem('email', userDetail.email);
-      localStorage.setItem('password', userDetail.password);
-      localStorage.setItem('role', userDetail.role);
-      localStorage.setItem('status', userDetail.status);
-      localStorage.setItem('info', userDetail.info);
 
-      userDetail.role === 'user' ? navigate('/user') : navigate('/admin');
-    }).catch((err) => {
-      setOutput('Login unsuccessful 😔');
-      setEmail('');
-      setPassword('');
-    });
+    axios.post(userApi + 'login', userDetail)
+      .then((response) => {
+        const userDetail = response.data.userList;
+
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('_id', userDetail._id);
+        localStorage.setItem('name', userDetail.name);
+        localStorage.setItem('email', userDetail.email);
+        localStorage.setItem('password', userDetail.password);
+        localStorage.setItem('role', userDetail.role);
+        localStorage.setItem('status', userDetail.status);
+        localStorage.setItem('info', userDetail.info);
+
+        navigate(userDetail.role === 'user' ? '/user' : '/admin');
+      })
+      .catch((err) => {
+        setOutput('Login unsuccessful 😔');
+        setEmail('');
+        setPassword('');
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading
+      });
   };
 
   return (
@@ -59,9 +68,16 @@ function Login() {
               placeholder="Enter your password"
             />
           </div>
-          <button type="button" className="auth-btn" onClick={HandleSubmit}>
-            Login
+
+          <button
+            type="button"
+            className="auth-btn"
+            onClick={HandleSubmit}
+            disabled={loading}
+          >
+            {loading ? <span className="spinner"></span> : 'Login'}
           </button>
+
           <p className="auth-footer">
             Not registered? <Link to="/register">Register here</Link>
           </p>
